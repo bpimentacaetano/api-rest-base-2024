@@ -1,0 +1,32 @@
+--Node.js v20.11.1
+
+npm install -g swagger
+
+swagger project create praticaREST
+(escolher express)
+
+Entrar na pasta praticaREST
+Atualizar versão do "swagger-express-mw": "^0.7.0"
+Add swagger_params_parser to swagger_controllers at config/default.yaml
+
+npm install
+
+swagger project start praticaREST
+
+explicar pastas! 
+
+===============================BONUS======================
+
+npm i swagger-ui-express --save
+
+Adicionar no app.js:
+
+const swaggerUi = require('swagger-ui-express');
+
+const swaggerUiMiddleware = swaggerUi.setup( //adicionei essa linha 
+  swaggerExpress.runner.swagger  //adicionei essa linha
+);  //adicionei essa linha
+
+app.use('/api-docs', swaggerUi.serve, swaggerUiMiddleware); //adicionei essa linha
+
+---
